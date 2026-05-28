@@ -17,31 +17,29 @@ def validar_entradas(primeira_nota, segunda_nota):
     else:
         return True
     
-# def tudoFuncionando():
-#     nota1 = float(input("Digite a primeira nota: "))
+def tudo_funcionando(nota1, nota2):
+    this_primeira_nota = nota1
 
-#     nota2 = float(input("Digite a segunda nota: "))
+    this_segunda_nota = nota2
 
-#     validacao = validar_entradas(nota1, nota2)
+    validacao = validar_entradas(this_primeira_nota, this_segunda_nota)
 
-#     while(validacao == False):
-#         nota1 = float(input("Digite a primeira nota: "))
+    if(validacao != True):  
+        mensagem = "Execute a função com valores positivos maiores que zero e menores ou igual a 10"
+        print(mensagem)
+        return
 
-#         nota2 = float(input("Digite a segunda nota: "))
+    media = calcular_media(this_primeira_nota, this_segunda_nota)
 
-#         validacao = validar_entradas(nota1, nota2)
+    print(f'Essa é a média {media}')
 
+    situacao = verificar_situacao(media)
 
+    print(situacao)
 
-#     media = calcular_media(nota1, nota2)
+    return situacao
 
-#     print(f'Essa é a média {media}')
-
-#     situacao = verificar_situacao(media)
-
-#     print(situacao)
-
-# tudoFuncionando()
+tudo_funcionando(8, 10)
 
 
 

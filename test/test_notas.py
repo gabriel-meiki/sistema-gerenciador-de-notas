@@ -3,7 +3,7 @@ import os
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), './')))
 
-from notas import calcular_media, verificar_situacao, validar_entradas
+from notas import calcular_media, verificar_situacao, validar_entradas, tudo_funcionando
 
 
 def test_calcular_media():
@@ -43,8 +43,20 @@ def test_validar_entradas():
 
     # Verificar
     assert resultado == False
-    
 
+def test_tudo_funcionando():
+    """Testa a execução de toda aplicação"""
+
+    # Preparar
+    primeira_nota = 10
+    segunda_nota = 8
+
+    # Agir
+    resultado = tudo_funcionando(primeira_nota, segunda_nota)
+
+    # Verificar
+    assert resultado == "Estudante aprovado"
+    
 
 # Comando para executar o código de teste pelo terminal
 # Precisa baixar o pytest
